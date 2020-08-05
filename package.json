@@ -1,0 +1,70 @@
+{
+  "name": "@realpha/pubsub-server",
+  "version": "0.1.0",
+  "description": "A wrapper around the google provided PubSub Library, conformant with NestJS and it's microservice interface",
+  "author": "realpha",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "test": "jest",
+    "test:debug": "node inspect --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
+    "lint": "gts check lib/**/*.ts",
+    "clean": "gts clean",
+    "lint:fix": "gts fix lib/**/*.ts"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@google-cloud/pubsub": "~2.3.0",
+    "nanoid": "^3.1.10"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "~7.3.2",
+    "@nestjs/core": "~7.3.2",
+    "@nestjs/microservices": "~7.3.2",
+    "reflect-metadata": "~0.1.13",
+    "rxjs": "~6.6.0"
+  },
+  "devDependencies": {
+    "@google-cloud/precise-date": "~2.0.3",
+    "@google-cloud/pubsub": "~2.3.0",
+    "@nestjs/common": "^7.3.2",
+    "@nestjs/core": "~7.3.2",
+    "@nestjs/microservices": "~7.3.2",
+    "@nestjs/testing": "~7.3.2",
+    "@types/chance": "^1.1.0",
+    "@types/jest": "~26.0.0",
+    "@types/node": "~13.9.1",
+    "google-pubsub-emulator": "~3.0.2",
+    "chance": "~1.1.6",
+    "gts": "~2.0.0",
+    "jest": "~26.0.0",
+    "reflect-metadata": "~0.1.13",
+    "rxjs": "~6.6.0",
+    "ts-jest": "~26.0.0",
+    "ts-node": "^8.10.2",
+    "typescript": "~3.9.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".spec.ts$",
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "./coverage",
+    "coveragePathIgnorePatterns": [
+      ".interface.ts",
+      "node_modules"
+    ],
+    "testEnvironment": "node"
+  }
+}
