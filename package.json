@@ -1,9 +1,9 @@
 {
   "name": "@realpha/pubsub-server",
-  "version": "0.1.0",
+  "version": "0.5.0",
   "description": "A wrapper around the google provided PubSub Library, conformant with NestJS and it's microservice interface",
   "author": "realpha",
-  "private": true,
+  "private": false,
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "license": "MIT",
@@ -60,7 +60,7 @@
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
-    "coverageDirectory": "./coverage",
+    "coverageDirectory": "../coverage",
     "coveragePathIgnorePatterns": [
       ".interface.ts",
       "node_modules"
